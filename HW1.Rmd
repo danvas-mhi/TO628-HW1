@@ -1,10 +1,13 @@
 ---
 title: "Homework Assignment 1"
-author: "Your Name Here"
+author: "Daniel Vasquez"
 date: 'Assigned: Oct 24, 2020, Due Sun Nov 01, 2020 11:59PM'
 output:
-  pdf_document: default
-  html_document: default
+pdf_document:
+  toc: yes
+html_document:
+  toc: true
+  toc_float: true
 ---
 
 ## HW-1 Instructions
@@ -29,7 +32,6 @@ output:
 
 9. Submit your RMD file, the HTML output and a link to your GitHub Repo on Canvas.
 
-
 ## Data frame basics
 
 We will continue working with the nycflights dataset we looked at in class. **Please be sure to keep the data file in the same directory as the RMD file - your project directory.**
@@ -38,18 +40,69 @@ First - make sure that you are reading the data correctly and doing all the data
 
 I now would like you to answer the following - all in their own separate R code blocks.
 
+## Reading my data
+
+> Ctrl+Alt+I = Create R Chunk
+
+```{r, cache=TRUE}
+nyc <- read.csv("nycflights.csv")
+
+# Quick exploration of the data
+str(nyc)
+summary(nyc)
+```
+
+## Cleaning the data
+
+```{r}
+# Deleting the column X
+nyc$X <- NULL
+
+# Factorize columns that need to be a factor
+
+nyc$origin <- as.factor(nyc$origin)
+nyc$tailnum <- as.factor(nyc$tailnum)
+nyc$month <- as.factor(nyc$month)
+nyc$dest <- as.factor(nyc$dest)
+nyc$carrier <- as.factor(nyc$carrier)
+nyc$flight <- as.factor(nyc$flight)
+
+# Re-check my data
+str(nyc)
+summary(nyc)
+```
+
 ### Data Exploration
 
 Let's first do some simple exploration of this data. 
 
 - How many airlines are there? (Hint: `levels` and `length` can be useful here)
+- There are `r length(levels(factor(nyc$carrier)))` airlines.
 
-- How many flights there were by the airline with code `OO`? (Hint: `nrow` can be useful here along with logical indexing)
+```{r}
+length(levels(factor(nyc$carrier)))
+```
+
+- How many flights were there by the airline with code `OO`? (Hint: `nrow` can be useful here along with logical indexing)
+- `r nrow(nyc[factor(nyc$carrier) == "OO",])` flights were there by the airline with code `OO`.
+
+```{r}
+nrow(nyc[factor(nyc$carrier) == "OO",])
+```
 
 - How long is the shortest flight out of any NYC airport? (Hint: `min` can be useful, remember to handle `NA` values)
+- The shortest flight out of any NYC airport is `r min(nyc$air_time, na.rm = TRUE)` minutes.
 
-- How many flights where there by United Airlines (code: UA) on Jan 12th 2013?
+```{r}
+min(nyc$air_time, na.rm = TRUE)
+```
 
+- How many flights were there by United Airlines (code: UA) on Jan 12th 2013?
+- On January 12, 2013, there were `r nrow(nyc[nyc$carrier == "UA" & nyc$month == 1 & nyc$day == 12 & nyc$year ==2013, ])` flights by United Airlines.
+
+```{r}
+nrow(nyc[nyc$carrier == "UA" & nyc$month == 1 & nyc$day == 12 & nyc$year ==2013, ])
+```
 
 ### Arrival Delay
 
