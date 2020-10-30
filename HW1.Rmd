@@ -108,12 +108,22 @@ nrow(nyc[nyc$carrier == "UA" & nyc$month == 1 & nyc$day == 12 & nyc$year ==2013,
 
 Lets focus on Arrival Delay.
 
-- What was the average arrival delay for all airports and all airlines combined in Jan 2013? 
+- What was the average arrival delay for all airports and all airlines combined in Jan 2013?
+
+```{r}
+mean(nyc$arr_delay, na.rm = TRUE)
+```
+
 
 - Whats was the median arrival delay for all airports and all airlines combined in Jan 2013?
 
+```{r}
+median(nyc$arr_delay, na.rm = TRUE)
+```
+
 Based on your answers to the two questions above, what can you say about the distribution of arrival delays? Provide your answer in a text paragraph form.
 
+#The mean is larger number than the median, providing rationale that big delays were longer by a greater margin compared to both shorter delays & early arrivals.
 
 ### Airline Performance
 
@@ -121,21 +131,56 @@ Lets see if all airlines are equally terrible as far as flight arrival delays ar
 
 - Calculate average arrival delays by airline (Hint: look up the command `tapply`)
 
+```{r}
+ave_arr_delays <- tapply(nyc$arr_delay, nyc$carrier, mean, na.rm = TRUE)
+```
+
 - Draw a Bar Plot of Average Arrival Delays for all the Airlines (Hint: command for making a Bar Plot is simply `barplot`)
 
+```{r}
+barplot(sort(ave_arr_delays, decreasing = TRUE), cex.names = 0.6)
+```
+
+
 - Which airline has the highest average arrival delay? Which airline has the smallest average arrival delay? Are there airlines that actually have negative average delay? Provide answer to this question in a text paragraph form using **inline R code**.
+
+#Frontier Airlines had the highest average arrival delay.  Alaska Airlines had the shortest average arrival delay.  Negative average delay means, I would imagine, that the flights make up more time in the air, on average, than they lose in departure delays on the ground, making them early more often than not.  This makes sense, since Seattle is their hub.  It's a relatively isolated city and they're a relatively small carrier with long flights.  They have more opportunities to make up time in the air.
 
 ### Air Gain
 
 Create a new column named airgain such that airgain = (departure delay - arrival delay) : this is the amount of delay a flight made up while in air.
 
+```{r}
+nyc$airgain <- nyc$dep_delay-nyc$arr_delay
+```
+
 a) Explore airgain data - calculate suitable descriptive statistics and appropriate graphics to better understand this data. This part is open ended - you do what you feel works best for you.
 
 b) Answer the questions:
 
-  - do airlines actually gain any time when in air on average? 
+  - do airlines actually gain any time when in air on average?
+  
+```{r}
+meanairgain <- mean(nyc$airgain, na.rm = TRUE)
+meanairgain
 
-  - Calculate average airgain for different airlines - which airlines do a better job, which do a worse job? 
+#If else statement
+if (meanairgain > 0) { print("Airline gained time in the air")} else { print("No, negative airgain")}
+```
+  
+  - Calculate average airgain for different airlines - which airlines do a better job, which do a worse job?
+  
+```{r}
+avgairgainbyairline <- tapply(nyc$airgain, nyc$carrier, mean, na.rm = TRUE)
+avgairgainbyairline
+```
+
+```{r}
+#Visualization to answer pt2
+
+barplot(sort(avgairgainbyairline, decreasing = TRUE), cex.names = 0.6)
+```
+
 
 ### Merging Data Frames
 
