@@ -378,6 +378,15 @@ summary {
 </div>
 
 
+<pre class="r"><code>library(dplyr)</code></pre>
+<pre><code>## 
+## Attaching package: &#39;dplyr&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:stats&#39;:
+## 
+##     filter, lag</code></pre>
+<pre><code>## The following objects are masked from &#39;package:base&#39;:
+## 
+##     intersect, setdiff, setequal, union</code></pre>
 <div id="hw-1-instructions" class="section level2">
 <h2>HW-1 Instructions</h2>
 <blockquote>
@@ -640,7 +649,6 @@ avgairgainbyairline</code></pre>
 ##         WN         YV 
 ##  8.0125374  3.3419118</code></pre>
 <pre class="r"><code>#Visualization to answer pt2
-
 barplot(sort(avgairgainbyairline, decreasing = TRUE), cex.names = 0.6)</code></pre>
 <p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABUAAAAPACAMAAADDuCPrAAAA6lBMVEUAAAAAADoAAGYAOjoAOmYAOpAAZpAAZrY6AAA6ADo6OgA6Ojo6OmY6ZmY6ZpA6ZrY6kJA6kLY6kNtmAABmOgBmOjpmZgBmZjpmZmZmZpBmkJBmkLZmtrZmtttmtv+QOgCQZgCQZjqQZmaQkDqQkLaQtpCQtraQttuQtv+Q27aQ2/+2ZgC2Zjq2kDq2kGa2kLa2tma2tpC2tra2ttu225C227a229u22/+2/7a2//++vr7bkDrbkGbbkJDbtmbbtpDbtrbb25Db27bb29vb2//b/7bb////tmb/25D/27b/29v//7b//9v///805X4GAAAACXBIWXMAAB2HAAAdhwGP5fFlAAAgAElEQVR4nO3dDXdc13Xf4QEllaicWA0ptawdi1HTxKngKA2dSlHhWo7kiqQJfv+vkxm8cQAy1tw92Dj/M3yetVqLXJmNPXPP/RFvBFevAShZjV4AYFYCClAkoABFAgpQJKAARQIKUCSgAEUCClAkoABFAgpQJKAARQIKUCSgAEUCClAkoABFAgpQJKAARQIKUCSgAEUCClAkoABFAgpQJKAARQIKUCSgAEUCClAkoABFAgpQJKAARQIKUCSgAEUCClAkoABFAgpQJKAARQIKUCSgAEUCClAkoABFAgpQJKAARQIKUCSgAEUCClAkoABFAgpQJKAARQIKUCSgAEUCClAkoABFAgpQJKAARQIKUCSgAEUCClAkoABFAgpQJKAARQIKUCSgAEUCClAkoABFAgpQJKAARQIKUCSgAEUCClAkoABFAgpQJKAARQIKUCSgAEUCClAkoABFAgpQJKAARQIKUCSgAEUCClAkoABFAgpQJKAARQIKUCSgAEUCClAkoABFAgpQJKAARQIKUCSgAEUCClAkoABFAgpQJKAARQIKUCSgAEUCClAkoABFAgpQJKAARQIKUCSgAEUCClAkoABFAgpQJKAARQIKUCSgAEUCClAkoABFAgpQJKAARQIKUCSgAEUCClAkoABFAgpQJKAARQIKUCSgAEUCClAkoABFAgpQJKAARQIKUCSgAEUCClAkoABFAgpQJKAARQIKUCSgAEUCClAkoABFAgpQJKAARQIKUCSgAEUCClAkoABFAgpQJKAARQIKUCSgAEUCClAkoABFAgpQJKAARQIKUCSgAEUCClAkoABFAgpQJKAARYcS0FXJ6K2BqR1GQ2r5FFBgL4fRkNXq/xYIKLCXw2iIgAIDHEZDBBQY4DAaIqDAAIfREAEFBjiMhggoMMBhNERAgQEOoyECCgxwPw05+8Oz3/6xcb6AAgP0NeRPP1wl87tPz//az9EnP3a9LQEFBmhryKvHqwffbv7j7DfXf3Py6POmNyagwAD9AT3ZlPMvnzz5bJPQpoIKKDBAe0Cfr7N58bH7y6ery6beOQEFBmgP6Pod0IeXv3W2LuijljcmoMAA3QHdRPP64/b1e6MftXwhSUCBAboDev2p0K3fu3sCCgwgoABF9/A50KMvr37vxbGAAoejNaCbcj7f+sKRz4ECh6QzoGsf/OLrv7l+F3TzW74KDxyM5oBeOP+4/ex3x74PFDgkjQ05+/6rz47fBHRT1DefDr1bAgoM0N2Q84peBfTDb5reioACA9xfQ87+qSufAgoMEdSQ1dt2f6iAAvcuqCHvCOiu2wkoMEB0QwQUSBbdEAEFkkU3RECBZNENEVAgWXRDBBRIdi9/lXPLor/LKaBAMgEFKOpryMtPBRQ4aJ0/TGTvf0NOQIFknQ258Q/KVQgokKy1Ifv+G0gCCiTrbcjz/T6IF1AgWW9D1h/E7/MuqIACyZob8uLJk3+oP1pAgWTRDRFQIFl0QwQUSBbdEAEFkkU3RECBZNENEVAgWXRDBBRIFt0QAQWSRTdEQIFk0Q0RUCBZdEMEFEgW3RABBZJFN0RAgWTRDRFQIFl0QwQUSBbdEAEFkkU3RECBZNENEVAgWXRDBBRIFt0QAQWSRTdEQIFk0Q0RUCBZdEMEFEgW3RABBZJFN0RAgWTRDRFQIFl0QwQUSBbdEAEFkkU3RECBZNENEVAgWXRDBBRIFt0QAQWSRTdEQIFk0Q0RUCBZdEMEFEgW3RABBZJFN0RAgWTRDRFQIFl0QwQUSBbdEAEFkkU3RECBZNENEVAgWXRDBBRIFt0QAQWSRTdEQIFk0Q0RUCBZdEMEFEgW3RABBZJFN0RAgWTRDRFQIFl0QwQUSBbdEAEFkkU3RECBZNENEVAgWXRDBBRIFt0QAQWSRTdEQIFk0Q0RUCBZdEMEFEgW3RABBZJFN0RAgWTRDRFQIFl0QwQUSBbdEAEFkkU3RECBZNENEVAgWXRDBBRIFt0QAQWSRTdEQIFk0Q0RUCBZdEMEFEgW3RABBZJFN0RAgWTRDRFQIFl0QwQUSBbdEAEFkkU3RECBZNENEVAgWXRDBBRIFt0QAQWSRTdEQIFk0Q0RUCBZdEMEFEgW3RABBZJFN0RAgWTRDRFQIFl0QwQUSBbdEAEFkkU3RECBZNENEVAgWXRDBBRIFt0QAQWSRTdEQIFk0Q0RUCBZdEMEFEgW3RABBZJFN+Q+A7qq6HjSwDSiG3B/AS3lU0DhPRfdgPsM6H6PB95H0Q0QUCBZdAMEFEgW3QABBZJFN0BAgWTRDRBQIFl0AwQUSBbdAAEFkkU3QECBZNENEFAgWXQDBBRIFt0AAQWSRTdAQIFk0Q0QUCBZdAMEFEgW3QABBZJFN0BAgWTRDRBQIFl0AwQUSBbdAAEFkkU3QECBZNENEFAgWXQDBBRIFt0AAQWSRTdAQIFk0Q0QUCBZdANmCuiq5E5fLuCeRd/C8wS0lk8BhblF38IzBXTPBYAJRd/CAgoki76FBRRIFn0LCyiQLPoWFlAgWfQtLKBAsuhbWECBZNG3sIACyaJvYQEFkkXfwgIKJIu+hQUUSBZ9CwsokCz6FhZQIFn0LSygQLLoW1hAgWTRt7CAAsmib2EBBZK138JnP/zh2bNnv/3hx8JjBRRI1nsLf//F1j9f8fOvlz5cQIFknbfwy09v/QtAH365bICAAskab+Hnx5to/uzJhY83vzj6fNEEAQWS9d3Crx6vg/nrrd/4bh3UB98uGSGgQLK+W/j0rVxukvpoyQgBBZK13cJnT1er2x+wP1+tPlry1XgBBZK13cLrdzff+nj9Xb/35wgokExA6wMEFN5znR/CH93+riUfwv+HA4AJ9d3CJ2/VcvNp0YdLRggokKzvFn5xvC7oN1u/8XLdz7feKf2zBBRI1ngLn55/6/yTv3+28c8X30m/6LuYBBSI1nkL//741l/lPPrVsgECCiRrvYXPvtpO6NEvl/5EJgEFknXfwmffP/vqyZMnv3z2deHn2QkokCzoFl69w84P3bNfAgosF3QLCygwl+hbWECBZNG3sIACyaJvYQEFkkXfwgIKJIu+hQUUSNb54+zexY+ze/cAYEICWh8goPCe67uF3/pHjQX0zwwAJtR4C29+/Oeyn750m4ACyTpv4Xf9u3KLCCiQrPUWXvpvIN0moECy3lv4+X4fxAsokKz3Fl5/EL/Pu6ACCiRrvoVfPHnyD/VHCyiQLPoWFlAgWfQtLKBAsuhbWECBZNG3sIACyaJvYQEFkkXfwgIKJIu+hQUUSBZ9CwsokCz6FhZQIFn0LSygQLLoW1hAgWTRt7CAAsmib2EBBZJF38ICCiSLvoUFFEgWfQsLKJAs+hYWUCBZ9C38XgV0VXI3LzRQEn0HvkcBreVTQGGo6DvwvQrongOA+xd9Bwro7gOA+xd9Bwro7gOA+xd9Bwro7gOA+xd9Bwro7gOA+xd9Bwro7gOA+xd9Bwro7gOA+xd9Bwro7gOA+xd9Bwro7gOA+xd9Bwro7gOA+xd9Bwro7gOA+xd9Bwro7gOA+xd9Bwro7gOA+xd9Bwro7gOA+xd9Bwro7gOA+xd9Bwro7gOA+xd9Bwro7gOA+xd9Bwro7gOA+xd9Bwro7gOK/yrInlcI3m/Rd5CALhkgoHDfou8gAW0eIKCwl+g7SECbBwgo7CX6DhLQ5gECCnuJvoMEtHmAgMJeou8gAW0eIKCwl+g7SECbBwgo7CX6DhLQ5gECCnuJvoMEtHnA/t+IH31+oFv0DSCgzQP2/0b86PMD3aJvAAFtHuAv48Neom8AAW0eIKCwl+gbQECbBwgo7CX6BhDQ5gECCnuJvgEEtHmAgMJeom8AAW0eEPADSaMPIPyE6PMroM0DAn4gafQBhJ8QfX4FtHnA8AV8DoC5RZ9fAW0eMHwBAWVu0edXQJsHDF9AQJlb9PkV0OYBwxcQUOYWfX4FtHnA8AUElLlFn18BbR4wfAEBZW7R51dAmwcMX0BAmVv0+RXQ5gHDFxBQ5hZ9fgW0ecDwBQSUuUWfXwFtHjB8AQFlbtHnV0CbBwxfQECZW/T5FdDmAcMXEFDmFn1+BbR5wPAFBJS5RZ9fAW0eMHwBPw+PuUUfPwFtHjB8AT8Pj7lFHz8BbR4wfAGfA2Bu0cdPQJsHDF9AQJlb9PET0OYBwxcQUOYWffwEtHnA8AUElLlFHz8BbR4wfAEBZW7Rx09AmwcMX0BAmVv08RPQ5gHDFxBQ5hZ9/AS0ecDwBQSUuUUfPwFtHjB8AQFlbtHHT0CbBwxfQECZW/TxE9DmAcMXEFDmFn38BLR5wPAFBJS5RR8/AW0eMHwBAWVu0cdPQJsHDF9AQJlb9PET0OYBwxcQUOYWffwEtHnA8AUElLlFHz8BbR4wfAEBZW7Rx09AmwcMX0BAmVv08RPQ5gHDFxBQ5hZ9/AS0ecDwBQSUuUUfPwFtHjB8AQFlbtHHT0CbBwxfQECZW/TxE9DmAcMXEFDmFn38BLR5wPAFBJS5RR8/AW0eMHwBAWVu0cdPQJsHDF9AQJlb9PET0OYBwxcQUOYWffwEtHnA8AUElLlFHz8BbR4wfAEBZW7Rx09AmwcMX0BAmVv08RPQ5gHDFxBQ5hZ9/AS0ecDwBQSUuUUfPwFtHjB8AQFlbtHHT0CbBwxfQECZW/TxE9DmAcMXEFDmFn38BLR5wPAFBJS5RR8/AW0eMHwBAWVu0cdPQJsHDF9AQJlb9PET0OYBwxcQUOYWffwEtHnA8AUElLlFHz8BbR4wfAEBZW7Rx09AmwcMX0BAmVv08RPQ5gHDFxBQ5hZ9/AS0ecDwBQSUuUUfPwFtHjB8AQFlbtHHT0CbBwxfQECZW/TxE9DmAcMXEFDmFn38BLR5wPAFBJS5RR8/AW0eMHwBAWVu0cdPQJsHDF9AQJlb9PET0OYBwxcQUOYWffwEtHnA8AUElLlFHz8BbR4wfAEBZW7Rx09AmwcMX0BAmVv08RPQ5gHDFxBQ5hZ9/AS0ecDwBQSUuUUfPwFtHjB8AQFlbtHHT0CbBwxfQECZW/TxE9DmAcMXEFDmFn38BLR5wPAFBJS5RR8/AW0eMHwBAWVu0cdPQJsHDF9AQJlb9PET0OYBwxcQUOYWffwEtHnA8AUElLlFHz8BbR4wfAEBZW7Rx09AmwcMX0BAmVv08RPQ5gHDFxBQ5hZ9/AS0ecDwBQSUuUUfPwFtHjB8AQFlbtHHT0CbBwxfQECZW/TxE9DmAcMXEFDmFn38BLR5wPAFBJS5RR8/AW0eMHwBAWVu0cdPQJsHDF9AQJlb9PET0OYBwxcQUOYWffwEtHnA8AUElLlFHz8BbR4wfAEBZW7Rx09AmwcMX0BAmVv08RPQ5gHDFxBQ5hZ9/AS0ecDwBQSUud3P8Tv7w7Pf/nH5wwS0ecDwBQSUufUdvz/9cJXM7z5dbRx98uPCEQLaPGD4AgLK3NqO36vHqwffbv7j7DerK0efL5shoM0Dhi8goMytP6Anm3L+5ZMnn20SuqygAto8YPgCAsrc2gP6fJ3Ni4/dXz5dXTZ1VwLaPGD4AgLK3NoDun4H9OHlb52tC/poyQwBbR4wfAEBZW7dAd1E8/rj9vV7ox8t+UKSgDYPGL6AgDK37oBefyp06/f+o1XeYcc3Jj/v6zMQUIYS0PqAqHq8p89AQBnqHj4HevTl1e+9OF72VSQBbR4wfAEBZW6tAd2U8/nWF458DjRswPAFBJS5dQZ07YNffP031++Cbn7LV+GTBgxfQECZW3NAL5x/3H72u2PfBxo2YPgCAsrcGo/f2fdffXb8JqCbor75dOhOBLR5wPAFBJS5dR+/84peBfTDb5Y9WECbBwxfQECZ2/0dv7N/WphPAW0fMHwBAWVu0cdPQJsHDF9AQJlb9PET0OYBwxcQUOYWffwEtHnA8AUElLlFHz8BbR4wfAEBZW7Rx09AmwcMX0BAmVv08RPQ5gHDFxBQ5hZ9/AS0ecDwBQSUuUUfPwFtHjB8AQFlbtHHT0CbBwxfQECZW/TxE9DmAcMXEFDmFn38BLR5wPAFBJS5RR8/AW0eMHwBAWVu0cdPQJsHDF9AQJlb9PET0OYBwxcQUOYWffwEtHnA8AUElLlFHz8BbR4wfAEBZW7Rx09AmwcMX0BAmVv08RPQ5gHDFxBQ5hZ9/AS0ecDwBQSUuUUfPwFtHjB8AQFlbtHHT0CbBwxfQECZW/TxE9DmAcMXEFDmFn38BLR5wPAFBJS5RR8/AW0eMHwBAWVu0cdPQJsHDF9AQJlb9PET0OYBwxe424CuSnY8Y/AO0cdHQJsHDF/gLgfU8img7CP6+Aho84DhC9xtQPdcABaLPj4C2jxg+AICytyij4+ANg8YvoCAMrfo4yOgzQOGLyCgzC36+Aho84DhCwgoc4s+PgLaPGD4AgLK3KKPj4A2Dxi+gIAyt+jjI6DNA4YvIKDMLfr4CGjzgOELCChziz4+Ato8YPgCAsrcoo+PgDYPGL6AgDK36OMjoM0Dhi8goMwt+vgIaPOA4QsIKHOLPj4C2jxg+AICytyij4+ANg8YvoCAMrfo4yOgzQOGLyCgzC36+Aho84DhC4QF1E9kZqHoqy+gzQOGLxAVUD/SnsWir76ANg8YvkBYQPccwPsn+uoLaPOA4QsIKHOLvvoC2jxg+AICytyir76ANg8YvoCAMrfoqy+gzQOGL3BoAfVVqPdN9MUT0OYBwxc4rID6Mv77J/riCWjzgOELHFpA9xzAdKIvnoA2Dxi+gIAK6NyiL56ANg8YvoCACujcoi+egDYPGL6AgAro3KIvnoA2Dxi+gIAK6NyiL56ANg8YvoCACujcoi+egDYPGL6AgAro3KIvnoA2Dxi+gIAK6NyiL56ANg8YvoCACujcoi+egDYPGL6AgAro3KIvnoA2Dxi+gIAK6NyiL56ANg8YvoCACujcoi+egDYPGL6AgAro3KIvnoA2Dxi+gIAK6NyiL56ANg8YvoCACujcoi+egDYPGL6AgAro3KIvnoA2Dxi+gIAK6NyiL56ANg8YvoCACujcoi+egDYPGL6AgAro3KIvnoA2Dxi+gIAK6NyiL56ANg8YvoCACujcoi+egDYPGL6AgAro3KIvnoA2Dxi+gIAK6NyiL56ANg8YvoCACujcoi+egDYPGL6AgAro3KIvnoA2Dxi+gIAK6NyiL56ANg8YvoCACujcoi+egDYPGL6AgAro3KIvnoA2Dxi+gIAK6NyiL56ANg8YvoCACujcoi+egDYPGL6AgAro3KIvnoA2Dxi+gIAK6NyiL56ANg8YvoCACujcoi+egDYPGL6AgAro3KIvnoA2Dxi+gIAK6NyiL56ANg8YvoCACujcoi+egDYPGL6AgAro3KIvnoA2Dxi+gIAK6NyiL56ANg8YvoCACujcoi+egDYPGL6AgAro3KIvnoA2Dxi+gIAK6NyiL56ANg8YvoCACujcoi+egDYPGL6AgAro3KIvnoA2Dxi+gIAK6NyiL56ANg8YvoCACujcoi+egDYPGL6AgAro3KIvnoA2Dxi+gIAK6NyiL56ANg8YvoCACujcoi+egDYPGL6AgAro3KIvnoA2Dxi+gIAK6NyiL56ANg8YvoCACujcoi+egDYPGL6AgAro3KIvnoA2Dxi+gIAK6NyiL56ANg8YvoCACujcoi+egDYPGL6AgAro3KIvnoA2Dxi+gIAK6NyiL56ANg8YvoCACujcoi+egDYPGL6AgAro3KIvnoA2Dxi+gIDeDOiqZMe7hAbRL76ANg8YvoCA3nwGAjqb6BdfQJsHDF9AQO/0GXDvol98AW0eMHyBqPwMHyCg84l+8QW0ecDwBaLyM3yAgM4n+sUX0OYBwxeIys/wAQI6n+gXX0CbBwxfICo/wwcI6HyiX3wBbR4wfIGo/AwfIKDziX7xBbR5wPAFovIzfICAzif6xRfQ5gHDF4jKz/ABAjqf6BdfQJsHDF8gKj/DBwjofKJffAFtHjB8gaj8DB8goPOJfvEFtHnA8AWi8jN8gIDOJ/rFF9DmAcMXiMrP8AECOp/oF19AmwcMXyAqP8MHCOh8ol98AW0eMHyBqPwMHyCg84l+8QW0ecDwBaLyM3yAgM4n+sUX0OYBwxeIys/wAQI6n+gXX0CbBwxfICo/wwcI6HyiX3wBbR4wfIGo/AwfIKDziX7xBbR5wPAFovIzfICAzif6xRfQ5gHDF4jKz/ABAjqf6BdfQJsHDF8gKj/DBwjofKJffAFtHjB8gaj8DB8goPOJfvEFtHnA8AWi8jN8gIDOJ/rFF9DmAcMXiMrP8AECOp/oF19AmwcMXyAqP8MHCOh8ol98AW0eMHyBqPwMHyCg84l+8QW0ecDwBaLyM3yAgM4n+sUX0OYBwxeIys/wAQI6n+gXX0CbBwxfICo/wwcI6HyiX3wBbR4wfIGo/AwfIKDziX7xBbR5wPAFovIzfICAzif6xRfQ5gHDF4jKz/ABdxDQVcmOtxlvi37tBLR5wPAFovIzfMAdLCCg9yz6tRPQ5gHDFwjLz+ABwxdgsejXTkCbBwxf4LDyM/8zYKno105AmwcMX+Cw8jP/M2Cp6NdOQJsHDF/gsPIz/zNgqejXTkCbBwxf4LDyM/8zYKno105AmwcMX+Cw8jP/M2Cp6NdOQJsHDF/gsPIz/zNgqejXTkCbBwxf4LDyM/8zYKno105AmwcMX+Cw8jP/M2Cp6NdOQJsHDF/gsPIz/zNgqejXTkCbBwxf4LDyM/8zYKno105AmwcMX+Cw8jP/M2Cp6NdOQJsHDF/gsPIz/zNgqejXTkCbBwxf4LDyM/8zYKn21+7shz88e/bstz/8WHisgDYPGL7AYeVn/mfAUr2v3fdfbP3QwZ9/vfThAto8YPgCh5Wf+Z8BS3W+di8/vfVzWz/8ctkAAW0eMHyBw8rP/M+ApRpfu+fHm2j+7MmFjze/OPp80QQBbR4wfIHDys/8z4Cl+l67V4/Xwfz11m98tw7qg2+XjBDQ5gHDFzis/Mz/DFiq77U7fSuXm6Q+WjJCQJsHDF/gsPIz/zNgqbbX7uzpanX7A/bnq9VHS74aL6DNA4YvcFj5mf8ZsFTba7d+d/Otj9ff9Xtbq9T/ucC9/zXCQY8fP2D4Anc3YPgCB/AMqiPu7vH7D7hfArrPgOELeAZJ+dl3wPAFDuAZ3LfOD+GPbn/X0tIP4YH75JMQS/W95ZO3arn5tOjDtrcH7ElAl+p7yy+O1wX9Zus3Xq77+dY7pUAMAV2q8S2fbj43cfTk759t/PPFd9Iv+i4m4F4J6FKdb/n3x7c+03v0q8a3BuxJQJdqfctnX20n9OiXvoAEyQR0qe63fPb9s6+ePHnyy2dfqyeEE9Cl/CUE4JKALiWgwCUBXUpAgUv7/kUgAQXeWwK6lIACd0RAAYoEFKBIQAGKBBSgSEABigQUoEhAAYoEFKBIQAGKBBSgSEABigQUoEhAAYoEFKBIQAGKBBSgSEABigQUoEhAAYoEFKBIQAGKBBSgSEABigQUoEhAAYoEFKBIQAGKBBSgSEABigQUoEhAAYoEFKBIQAGKBBSgSEABigQUoEhAAYoEFKBIQAGKVkVbAwQUeD8JKMAoAgpQJKAARQIKUCSgAEUCClAkoABFe38f1L0vPOwtA9wkoADvCwEFKBJQgCIBBSgSUIAiAQUoElCAIgEFKBJQgCIBBSgSUIAiAQUoElCAIgEFKBJQgCIBBSgSUIAiAQUoElCAIgEFKBJQgCIBBSgSUIAiAQUoElCAIgEFKBJQgCIBBSgSUIAiAQUoElCAIgEFKBJQgCIBBSgSUIAiAQUoElCAIgEFKBJQgCIBBSgSUIAiAQUoElCAIgEFKBJQgCIBBSgSUIAiAQUoElCAIgEFKBJQgCIBBSgSUIAiAQUoElCAooMN6NnToy+v/vu7z1ar1V/8esGjTy8f/OL44VvTftqrxw++ffOf//r48rFbv72Dsy9Wq6Nfbf7r+erKw90fvt8zePshix5/uvr88n8vnvGrxx/9eLp6dGOhn3T5tD/45I8Xv/p85zd/4/Gbl+3mBdn5Ilxt8MsfN786++p4tfr5j7svcHL5jNf/8delBW5dw+XH+PZDFk44+Yv/efF0z/7fZ48qA7YuwvpJL7+EtwZs3RMxDjagL46vju/r31xegk92f/Tt/GxN28X1rfN6k43nFxk5e7rkAL16fJ3MOwnowmfw1kMWPf7yja6f8cVTfr5+7OnqYqOlAV1dPG6vgN66IIsnbDbePJm1j3Yv6FUqn1cXuHkNlx/js6uHXGT/1i9/2snl5du8EI+2B+z+ItxpQLfuiRgHG9CTB//18k/6F8dHmz8y/+3TBdfvdn7eTNvJi+PLI3bxftvp+TVfcutuDu9H32xO7OeVdrze+xm89ZBFj9+8x3n+tv/T44dXy5xe3ncLAnr+tP/0m/M/fyoBffOIWxdk2YSXn15cxA+/ef3y6ZKLeHpZ3vXDSwvcuIaFY3yy+vDX67f63acXzbn1yx0ef/Tx5eH54PjR5YDX5wN2Luj2RSgG9M2Dtu6JGIca0FePH/7++uPIi//d+c59/VZ+tqbt5PouuXj8+fuez5e883KVoLOnD+8moEufwe2HLHz8yflbX7/yJ5uncfZ0ncDTo/92PmBpQC/fn98voLcuyMIJm3egz5/D+euw++MvPuY4/4OztMCNa7j8GG9Fe/PYW7/cwcmDv7180r/YBHT5gLsN6PY9EeNQA7p+3S9f79J1u5WfrWk7Pv7yHZWTi7f94vjB/1n0CdDrG3UToLsI6OJncOshCx9/sfLJg2/P1zh/MqdH/+v8JVge0POH7xfQ2xdk2YTN/744XvoZkNcXybl82SoL3LiGy1+Ak+v3dc8H3PrlLgMe/Mvx5o0+X//vo8qAuw7om3sixoEG9Pz9hcsLvv7z8ue/XviSn956D/LNtN1c3jXXzVl//Lrs9Fz/aVv93GbrNCgAAAZzSURBVNG+z+DmQ5Y+/jw3mwN//h/nT2C90OY9uUJAz56W/hS58YjbF2TJhJefXlyE9Yeuq59/s2iHk9WvLt9zrCxw4xouPsbnL9ub/7z1y10mnDz418fnH7p/9G/Hj27P222JlvdAl34uqtOBBvTF8datuvna3dKvwt/4us2Nabs5ufzKx+W7LevTv/DjjpPVJz9uPt9zfu9ufzVlRzcDWngGNx6y9PHXzTv/eOt0c+I3C52cfzZwaUA378nu80Wk81fi1gVZNOHo/BPRP7v+YvDuXj3+4OrpFha49YfgwmO8/dmG9St465e7TFj/n23e23v1+NHm+hcGvHkJN+nb64tImwFb90SMAw3o+Wl980fV2R/+x8eLvoB6M6C3pu3i8p2Gq4e8OF5Uv4tHbG7dj+8moIVncOMhix9/evUe6/pWu3h/5fTySymDAnrrgiyb8MnmT4PVX/34+k9fLPyD8PnqzRFYvMBb34q26BjfSUCfr1dY/7+MgG7dEzEOM6CX3++w2v7j/uwfF5z9G0f3XdN+yvmdct2KV48f/O2iryGtvfxs/e7GN7V2vN7/Gdx4yPLHX3/O9PLuu1xo/fHsmA/hb12QRRPWJ+fR1buOSz9+fFOdwgK3A3q5zI4j7uJD+HV2H20+5/gi4UP47XsixmEG9Ppdh/MPQK6/drjgHaibn77f+lNw5wnrC3/9ScPN15FPFn8f5utyO15vP4NHpWdw4yHLH7++8S6Ss377zy++JH/x5aQH/7I4oMWvodx6xI0LsmzC5iq8OL7474V379a7bcsX2L6GhWN8B19E2nz08P/XDX2x9UWkP75e8BW1uw3oud3rfR8OMqDXZ+z8S543vhCyo+2A3py2q/Wds/UlpPP3AhfdPBc36vPad/BcPfL1xW1beAY3HlJ6/Ef/eP58z54+vHgqp5efA/xgcUBPat8Me+sR2xdk4YTN878sYf090MIC29ewcIzv4NuYNt999nf/+curz4Ff/GH64de7fy/r3X4f6Jt7IsZBBvT6T9jL912ONn8X7+WSr+NsB/TmtJ2dPPjf19+5d3nhF33+a/Xwx9ffHW/2KB289Ufdf/Xj67PfHW9/4Ljkewi3HlJ5BU6PPr64X08//PT6m+lfn//tlsXfSF/7BNrtR7y5IAsnXHzUfP4VjEWHaOPmJw4XLrB9DSvH+M03vj98xy93ePz52fnZ+f//5hvpXzxe9qmcd/73zrYftHVPxDjIgF59z/H1XwS68OHu/doO6K1pu3pxfBnM64edLrn5Lj/tuDmpb/5O4rICX/jVW6/Hbo/eekjlFVg//Ytn+/zyG7hOr/4m5+4B3f4i0PWvdr4Jb79s1xdkZzc2ePXp4kvw+mZAly+wdQ0rx3jvv8q5Xvfi+0cuAno9oPo3kZZewlsDtu6JGIcY0K0f13Dx7cvff3Z8/SMhdrMV0Lem7ejs6fW3Tr/5XqYlf5vpi/XOt36YyKL77/oHPxSewY2H/JfKK7A+7J/fGHW69I+Rmz/KY/+Ani36a5hbE44uvvnz7DfH51+PX2Q7oMsXuPnDO5Yf431/mMjmhTu5+PD/0eUK6wE/++svNn+tdSd3GtCteyLGIQYUaPX9fw/6Os5QAgpQJKAARQIKUCSgAEUCClAkoABFAgpQJKAARQIKUCSgAEUCClAkoABFAgpQJKAARQIKUCSgAEUCClAkoABFAgpQJKAARQIKUCSgAEUCClAkoABFAgpQJKAARQIKUCSgAEUCClAkoABFAgpQJKAARQIKUCSgAEUCClAkoABFAgpQJKAARQIKUCSgAEUCClAkoABFAgpQJKAARQIKUCSgAEUCClAkoABFAgpQJKAARQIKUCSgAEUCClAkoABFAgpQJKAARQIKUCSgAEUCClAkoABFAgpQJKAARQIKUCSgAEUCClAkoABFAgpQJKAARQIKUCSgAEUCClAkoABFAgpQJKAARQIKUCSgAEUCClAkoABFAgpQJKAARQIKUCSgAEUCClAkoABFAgpQJKAARQIKUCSgAEUCClAkoABFAgpQJKAARQIKUCSgAEUCClAkoABFAgpQJKAARQIKUCSgAEUCClAkoABFAgpQJKAARQIKUCSgAEUCClAkoABFAgpQJKAARQIKUCSgAEUCClAkoABFAgpQJKAARQIKUCSgAEUCClAkoABFAgpQJKAARQIKUCSgAEUCClD070gX+HpfSvoWAAAAAElFTkSuQmCC" width="672" /></p>
 </div>
@@ -650,11 +658,117 @@ barplot(sort(avgairgainbyairline, decreasing = TRUE), cex.names = 0.6)</code></p
 <p>This section and the next is new compared to the class exercise. As you had an opportunity to work together in your breakout rooms for previous questions, this and the next section will carry a higher weight in grading for this HW.</p>
 </blockquote>
 <p>You can get detailed information about the physical planes in our dataset in this file: <code>planes.csv</code>. Download and save this file in your project directory.</p>
-<ol style="list-style-type: lower-alpha">
-<li><p>Read the <code>planes.csv</code> file using <code>read.csv</code> command. Do any data cleaning necessary.</p></li>
-<li><p>Merge the flights data and the planes data using the <code>merge</code> command. You should do the merge on the common column named <code>tailnum</code>. <em>getting this right may need some trial and error and getting some help</em>.</p></li>
-<li><p>Now that you have a merged dataset, think of what interesting questions that you can ask that can be answered using the merged dataset. You are asked to pose five interesting questions and answer them. (For example: who are the top 10 manufacturers of planes that fly out of NYC airports?) <strong>Be creative. Be bold. Ask questions that you would want to know answers to even if you were not doing this for a HW. </strong></p></li>
+<pre class="r"><code># a)Read the `planes.csv` file using `read.csv` command.
+planes &lt;- read.csv(&quot;planes.csv&quot;)
+
+## Cleaning planes data
+
+# Deleting the column X.
+planes$X &lt;- NULL
+
+# Factorize columns that need to be a factor
+
+planes$tailnum &lt;- as.factor(planes$tailnum)
+planes$type &lt;- as.factor(planes$type)
+planes$manufacturer &lt;- as.factor(planes$manufacturer)
+planes$model &lt;- as.factor(planes$model)
+planes$engine &lt;- as.factor(planes$engine)
+planes$engines &lt;- as.factor(planes$engines)
+
+# Re-check my data
+str(planes)</code></pre>
+<pre><code>## &#39;data.frame&#39;:    3322 obs. of  9 variables:
+##  $ tailnum     : Factor w/ 3322 levels &quot;N10156&quot;,&quot;N102UW&quot;,..: 1 2 3 4 5 6 7 8 9 10 ...
+##  $ year        : int  2004 1998 1999 1999 2002 1999 1999 1999 1999 1999 ...
+##  $ type        : Factor w/ 3 levels &quot;Fixed wing multi engine&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...
+##  $ manufacturer: Factor w/ 35 levels &quot;AGUSTA SPA&quot;,&quot;AIRBUS&quot;,..: 18 3 3 3 18 3 3 3 3 3 ...
+##  $ model       : Factor w/ 127 levels &quot;150&quot;,&quot;172E&quot;,&quot;172M&quot;,..: 108 87 87 87 107 87 87 87 87 87 ...
+##  $ engines     : Factor w/ 4 levels &quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;: 2 2 2 2 2 2 2 2 2 2 ...
+##  $ seats       : int  55 182 182 182 55 182 182 182 182 182 ...
+##  $ speed       : int  NA NA NA NA NA NA NA NA NA NA ...
+##  $ engine      : Factor w/ 6 levels &quot;4 Cycle&quot;,&quot;Reciprocating&quot;,..: 3 3 3 3 3 3 3 3 3 3 ...</code></pre>
+<pre class="r"><code>summary(planes)</code></pre>
+<pre><code>##     tailnum          year                            type     
+##  N10156 :   1   Min.   :1956   Fixed wing multi engine :3292  
+##  N102UW :   1   1st Qu.:1997   Fixed wing single engine:  25  
+##  N103US :   1   Median :2001   Rotorcraft              :   5  
+##  N104UW :   1   Mean   :2000                                  
+##  N10575 :   1   3rd Qu.:2005                                  
+##  N105UW :   1   Max.   :2013                                  
+##  (Other):3316   NA&#39;s   :70                                    
+##             manufacturer          model      engines      seats      
+##  BOEING           :1630   737-7H4    : 361   1:  27   Min.   :  2.0  
+##  AIRBUS INDUSTRIE : 400   A320-232   : 256   2:3288   1st Qu.:140.0  
+##  BOMBARDIER INC   : 368   CL-600-2B19: 171   3:   3   Median :149.0  
+##  AIRBUS           : 336   CL-600-2D24: 123   4:   4   Mean   :154.3  
+##  EMBRAER          : 299   737-824    : 122            3rd Qu.:182.0  
+##  MCDONNELL DOUGLAS: 120   MD-88      : 117            Max.   :450.0  
+##  (Other)          : 169   (Other)    :2172                           
+##      speed                 engine    
+##  Min.   : 90.0   4 Cycle      :   2  
+##  1st Qu.:107.5   Reciprocating:  28  
+##  Median :162.0   Turbo-fan    :2750  
+##  Mean   :236.8   Turbo-jet    : 535  
+##  3rd Qu.:432.0   Turbo-prop   :   2  
+##  Max.   :432.0   Turbo-shaft  :   5  
+##  NA&#39;s   :3299</code></pre>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>Merge the flights data and the planes data using the <code>merge</code> command. You should do the merge on the common column named <code>tailnum</code>. <em>getting this right may need some trial and error and getting some help</em>.</li>
 </ol>
+<pre class="r"><code>nycplanes &lt;- merge(x = nyc, y=planes,
+                   by = &quot;tailnum&quot;, all = TRUE)</code></pre>
+<ol start="3" style="list-style-type: lower-alpha">
+<li>Now that you have a merged dataset, think of what interesting questions that you can ask that can be answered using the merged dataset. You are asked to pose five interesting questions and answer them. (For example: who are the top 10 manufacturers of planes that fly out of NYC airports?) <strong>Be creative. Be bold. Ask questions that you would want to know answers to even if you were not doing this for a HW. </strong></li>
+</ol>
+<ul>
+<li>What is the 90th percentile of airgain for different manufacturers?</li>
+</ul>
+<pre class="r"><code>nycplanes %&gt;%
+  group_by(manufacturer) %&gt;%
+  summarise(airgain90=quantile(airgain, 0.9, na.rm=TRUE)) %&gt;%
+  arrange(desc(airgain90))</code></pre>
+<pre><code>## `summarise()` ungrouping output (override with `.groups` argument)</code></pre>
+<pre><code>## # A tibble: 36 x 2
+##    manufacturer          airgain90
+##    &lt;fct&gt;                     &lt;dbl&gt;
+##  1 BELL                       34.8
+##  2 AMERICAN AIRCRAFT INC      34.6
+##  3 SIKORSKY                   33  
+##  4 DEHAVILLAND                32  
+##  5 PIPER                      32  
+##  6 BOEING                     30  
+##  7 MCDONNELL DOUGLAS          30  
+##  8 BOMBARDIER INC             29  
+##  9 FRIEDEMANN JON             29  
+## 10 STEWART MACO               29  
+## # ... with 26 more rows</code></pre>
+<ul>
+<li>What is the breakdown for engines in planes from LaGuardia Airport? How many planes are in each type of group?</li>
+</ul>
+<pre class="r"><code>nycplanes %&gt;%
+  filter(origin == &#39;LGA&#39;) %&gt;%
+  group_by(engines) %&gt;%
+  summarize(number_of_planes=n())</code></pre>
+<pre><code>## `summarise()` ungrouping output (override with `.groups` argument)</code></pre>
+<pre><code>## # A tibble: 5 x 2
+##   engines number_of_planes
+##   &lt;fct&gt;              &lt;int&gt;
+## 1 1                    966
+## 2 2                  74091
+## 3 3                      4
+## 4 4                     40
+## 5 &lt;NA&gt;               29561</code></pre>
+<p>How many seats are in the second largest capacity aircraft? How many of these planes are in circulation?</p>
+<pre class="r"><code>nycplanes %&gt;%
+  group_by(seats) %&gt;%
+  summarize(count = n()) %&gt;%
+  arrange(desc(seats)) %&gt;%
+  slice(2)</code></pre>
+<pre><code>## `summarise()` ungrouping output (override with `.groups` argument)</code></pre>
+<pre><code>## # A tibble: 1 x 2
+##   seats count
+##   &lt;int&gt; &lt;int&gt;
+## 1   400    29</code></pre>
 </div>
 <div id="making-your-html-look-nice" class="section level3">
 <h3>Making Your HTML Look Nice</h3>

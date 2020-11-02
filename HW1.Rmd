@@ -10,6 +10,10 @@ html_document:
   toc_float: true
 ---
 
+```{r}
+library(dplyr)
+```
+
 ## HW-1 Instructions
 
 > Our class emphasizes clear communication of data analysis results to non-technical audiences. I expect your HTML output documents to be readable and well formatted. I expect you to put ample comments in your R code to make the code understandable. Along with accuracy of results, I am looking for quality of presentation as well. This homework is due by **11:59PM on Nov 01st**.  To complete this assignment, follow these steps:
@@ -177,7 +181,6 @@ avgairgainbyairline
 
 ```{r}
 #Visualization to answer pt2
-
 barplot(sort(avgairgainbyairline, decreasing = TRUE), cex.names = 0.6)
 ```
 
@@ -187,12 +190,62 @@ barplot(sort(avgairgainbyairline, decreasing = TRUE), cex.names = 0.6)
 > This section and the next is new compared to the class exercise. As you had an opportunity to work together in your breakout rooms for previous questions, this and the next section will carry a higher weight in grading for this HW.
 
 You can get detailed information about the physical planes in our dataset in this file: `planes.csv`. Download and save this file in your project directory.
+```{r}
+# a)Read the `planes.csv` file using `read.csv` command.
+planes <- read.csv("planes.csv")
 
-a) Read the `planes.csv` file using `read.csv` command. Do any data cleaning necessary.
+## Cleaning planes data
+
+# Deleting the column X.
+planes$X <- NULL
+
+# Factorize columns that need to be a factor
+
+planes$tailnum <- as.factor(planes$tailnum)
+planes$type <- as.factor(planes$type)
+planes$manufacturer <- as.factor(planes$manufacturer)
+planes$model <- as.factor(planes$model)
+planes$engine <- as.factor(planes$engine)
+planes$engines <- as.factor(planes$engines)
+
+# Re-check my data
+str(planes)
+summary(planes)
+
+```
 
 b) Merge the flights data and the planes data using the `merge` command. You should do the merge on the common column named `tailnum`. *getting this right may need some trial and error and getting some help*.
 
+```{r}
+nycplanes <- merge(x = nyc, y=planes,
+                   by = "tailnum", all = TRUE)
+```
+
 c) Now that you have a merged dataset, think of what interesting questions that you can ask that can be answered using the merged dataset. You are asked to pose five interesting questions and answer them. (For example: who are the top 10 manufacturers of planes that fly out of NYC airports?) **Be creative. Be bold. Ask questions that you would want to know answers to even if you were not doing this for a HW. **
+
+- What is the 90th percentile of airgain for different manufacturers?
+```{r}
+nycplanes %>%
+  group_by(manufacturer) %>%
+  summarise(airgain90=quantile(airgain, 0.9, na.rm=TRUE)) %>%
+  arrange(desc(airgain90))
+```
+ - What is the breakdown for engines in planes from LaGuardia Airport? How many planes are in each type of group?
+```{r}
+nycplanes %>%
+  filter(origin == 'LGA') %>%
+  group_by(engines) %>%
+  summarize(number_of_planes=n())
+```
+ 
+How many seats are in the second largest capacity aircraft? How many of these planes are in circulation?
+```{r}
+nycplanes %>%
+  group_by(seats) %>%
+  summarize(count = n()) %>%
+  arrange(desc(seats)) %>%
+  slice(2)
+```
 
 ### Making Your HTML Look Nice
 
