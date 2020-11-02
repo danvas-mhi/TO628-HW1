@@ -91,7 +91,7 @@ mean(nyc$arr_delay, na.rm = TRUE)
 median(nyc$arr_delay, na.rm = TRUE)
 ```
 
-What can you say about the distribution of arrival delays?
+- What can you say about the distribution of arrival delays?
 - The mean is larger number than the median, providing rationale that big delays were longer by a greater margin compared to both shorter delays & early arrivals.
 
 ### Airline Performance
@@ -112,7 +112,10 @@ barplot(sort(ave_arr_delays, decreasing = TRUE), cex.names = 0.6)
 
 - Which airline has the highest average arrival delay? Which airline has the smallest average arrival delay? Are there airlines that actually have negative average delay?.
 
-- Frontier Airlines had the highest average arrival delay.  Alaska Airlines had the shortest average arrival delay.  Native average delay means, I would imagine, that the flights make up more time in the air, on average, than they lose in departure delays on the ground, making them early more often than not. It's a relatively isolated city and they're a relatively small carrier with long flights. They have more opportunities to make up time in the air.
+`Frontier Airlines had the highest average arrival delay.`
+`Alaska Airlines had the shortest average arrival delay.`
+`Native average delay means that the flights make up more time in the air, on average, than they lose in departure delays on the ground, making them early more often than not.`
+`It's a relatively isolated city and they're a relatively small carrier with long flights. They have more opportunities to make up time in the air.`
 
 ### Air Gain
 
