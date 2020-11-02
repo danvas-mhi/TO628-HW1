@@ -758,7 +758,7 @@ str(planes)</code></pre>
 ## 3 3                      4
 ## 4 4                     40
 ## 5 &lt;NA&gt;               29561</code></pre>
-<p>How many seats are in the second largest capacity aircraft? How many of these planes are in circulation?</p>
+<p>-How many seats are in the second largest capacity aircraft? How many of these planes are in circulation?</p>
 <pre class="r"><code>nycplanes %&gt;%
   group_by(seats) %&gt;%
   summarize(count = n()) %&gt;%
@@ -769,6 +769,35 @@ str(planes)</code></pre>
 ##   seats count
 ##   &lt;int&gt; &lt;int&gt;
 ## 1   400    29</code></pre>
+<ul>
+<li>What is the mean and median speed for American Airline flights with a destination at O’Hare International Airport?</li>
+</ul>
+<pre class="r"><code>nycplanes %&gt;%
+  filter(carrier == &#39;AA&#39;,
+         dest == &#39;ORD&#39;) %&gt;%
+  summarize(mean = mean(speed, na.rm = TRUE), median = median(speed, na.rm=TRUE))</code></pre>
+<pre><code>##       mean median
+## 1 108.8239     95</code></pre>
+<ul>
+<li>Should I fly in morning (4am - 12Noon), afternoon (12Noon - 4pm), evening (4pm - 8pm) or night (8pm - 4am) if I want to experience the least amount of arrival delay? [Use piping and ‘mutate’ command]</li>
+</ul>
+<pre class="r"><code>nycplanes %&gt;%
+  mutate(timeofday = 
+           case_when(nycplanes$hour &gt;= 4 &amp; nycplanes$hour &lt;= 12 ~&#39;morning&#39;,
+                     nycplanes$hour &gt; 12 &amp; nycplanes$hour &lt;= 16 ~&#39;afternoon&#39;,
+                     nycplanes$hour &gt; 16 &amp; nycplanes$hour &lt;= 20 ~&#39;evening&#39;,
+                     nycplanes$hour &gt; 20 &amp; nycplanes$hour &lt;= 24 ~&#39;night&#39;)) %&gt;%
+  group_by(timeofday) %&gt;%
+  summarize(mean_of_arrival_delay = mean(arr_delay, na.rm=TRUE))</code></pre>
+<pre><code>## `summarise()` ungrouping output (override with `.groups` argument)</code></pre>
+<pre><code>## # A tibble: 5 x 2
+##   timeofday mean_of_arrival_delay
+##   &lt;chr&gt;                     &lt;dbl&gt;
+## 1 afternoon                 10.3 
+## 2 evening                   16.0 
+## 3 morning                   -1.18
+## 4 night                     17.5 
+## 5 &lt;NA&gt;                     NaN</code></pre>
 </div>
 <div id="making-your-html-look-nice" class="section level3">
 <h3>Making Your HTML Look Nice</h3>

@@ -238,13 +238,34 @@ nycplanes %>%
   summarize(number_of_planes=n())
 ```
  
-How many seats are in the second largest capacity aircraft? How many of these planes are in circulation?
+-How many seats are in the second largest capacity aircraft? How many of these planes are in circulation?
 ```{r}
 nycplanes %>%
   group_by(seats) %>%
   summarize(count = n()) %>%
   arrange(desc(seats)) %>%
   slice(2)
+```
+- What is the mean and median speed for American Airline flights with a destination at O'Hare International Airport?
+
+```{r}
+nycplanes %>%
+  filter(carrier == 'AA',
+         dest == 'ORD') %>%
+  summarize(mean = mean(speed, na.rm = TRUE), median = median(speed, na.rm=TRUE))
+```
+
+- Should I fly in morning (4am - 12Noon), afternoon (12Noon - 4pm), evening (4pm - 8pm) or night (8pm - 4am) if I want to experience the least amount of arrival delay? [Use piping and 'mutate' command]
+
+```{r}
+nycplanes %>%
+  mutate(timeofday = 
+           case_when(nycplanes$hour >= 4 & nycplanes$hour <= 12 ~'morning',
+                     nycplanes$hour > 12 & nycplanes$hour <= 16 ~'afternoon',
+                     nycplanes$hour > 16 & nycplanes$hour <= 20 ~'evening',
+                     nycplanes$hour > 20 & nycplanes$hour <= 24 ~'night')) %>%
+  group_by(timeofday) %>%
+  summarize(mean_of_arrival_delay = mean(arr_delay, na.rm=TRUE))
 ```
 
 ### Making Your HTML Look Nice
